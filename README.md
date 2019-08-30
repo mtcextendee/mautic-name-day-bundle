@@ -1,6 +1,6 @@
 # Mautic Name Day Bundle
 
-Slovakia name day as segment filter
+Slovakia name days as segment filter.
 
 #### Support our projects
 

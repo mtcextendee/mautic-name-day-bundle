@@ -69,7 +69,7 @@ class FiltersSubscriber extends CommonSubscriber
             $joins = $qb->getQueryPart('join');
             if (!array_key_exists('name_day_calendar', $joins)) {
                 $currentDay = (new DateTimeHelper())->getDateTime()->format('m-d');
-                $qb->innerJoin('l', MAUTIC_TABLE_PREFIX.'name_day_calendar','ndc', 'ndc.day = :day  AND  FIND_IN_SET(l.firstname, ndc.names)');
+                $qb->innerJoin('l', MAUTIC_TABLE_PREFIX.'name_day_calendar','ndc', 'ndc.day = :day  AND  FIND_IN_SET(lower(l.firstname), lower(ndc.names))');
                 $qb->setParameter(':day', $currentDay);
             }
             $event->setFilteringStatus(true);

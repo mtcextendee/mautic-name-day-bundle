@@ -12,6 +12,11 @@ class NameDayIntegration extends AbstractIntegration
         return 'NameDay';
     }
 
+    public function getDisplayName()
+    {
+        return 'Slovakia Name Day';
+    }
+
     public function getAuthenticationType()
     {
         /* @see \Mautic\PluginBundle\Integration\AbstractIntegration::getAuthenticationType */

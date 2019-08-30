@@ -5,6 +5,7 @@ namespace MauticPlugin\MauticNameDayBundle;
 use Mautic\CoreBundle\Factory\MauticFactory;
 use Mautic\PluginBundle\Bundle\PluginBundleBase;
 use Mautic\PluginBundle\Entity\Plugin;
+use MauticPlugin\MauticNameDayBundle\Entity\Name;
 
 class MauticNameDayBundle extends PluginBundleBase
 {
@@ -28,6 +29,7 @@ class MauticNameDayBundle extends PluginBundleBase
             $db  = $factory->getDatabase();
             $sql = file_get_contents(__DIR__.'/Data/query.sql');
             if ($sql) {
+                $sql = str_replace(Name::TABLE, MAUTIC_TABLE_PREFIX.Name::TABLE, $sql);
                 $db->beginTransaction();
                 try {
                     $db->query($sql);
