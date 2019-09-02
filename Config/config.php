@@ -4,7 +4,7 @@ return [
     'name'        => 'MauticNameDayBundle',
     'description' => 'Names day segment filter for Mautic',
     'author'      => 'mtcextendee.com',
-    'version'     => '1.0',
+    'version'     => '1.0.0',
     'routes'      => [
     ],
     'services'    => [

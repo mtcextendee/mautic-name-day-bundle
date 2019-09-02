@@ -37,20 +37,19 @@ class MauticNameDayBundle extends PluginBundleBase
                 self::importDataToTable($db, $supportedCountry);
             }
 
-
         }
     }
 
     /**
      * @param \Doctrine\DBAL\Connection $db
-     * @param string $country
+     * @param string                    $country
      *
      * @throws \Doctrine\DBAL\ConnectionException
      */
     private static function importDataToTable(\Doctrine\DBAL\Connection $db, $country)
     {
         $countyEnum = (new CountryEnum($country));
-        $sql = file_get_contents(sprintf("%s/Data/%s.sql", __DIR__, $countyEnum->getTableName()));
+        $sql        = file_get_contents(sprintf("%s/Data/%s.sql", __DIR__, $countyEnum->getTableName()));
         if ($sql) {
             $sql = str_replace(
                 $countyEnum->getTableName(),
@@ -63,7 +62,7 @@ class MauticNameDayBundle extends PluginBundleBase
                 $db->commit();
             } catch (\Exception $e) {
                 $db->rollback();
-               // throw $e;
+                // throw $e;
             }
         }
     }
