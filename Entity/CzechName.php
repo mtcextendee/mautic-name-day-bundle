@@ -2,7 +2,7 @@
 
 /*
  * @copyright   2019 Mautic Contributors. All rights reserved
- * @author      Mautic
+ * @author      MTCExtendee.com
  *
  * @link        http://mautic.org
  *
@@ -14,11 +14,11 @@ namespace MauticPlugin\MauticNameDayBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Mautic\ApiBundle\Serializer\Driver\ApiMetadataDriver;
 use Mautic\CoreBundle\Doctrine\Mapping\ClassMetadataBuilder;
+use MauticPlugin\MauticNameDayBundle\Enum\CountryEnum;
+use MauticPlugin\MauticNameDayBundle\Enum\SettingsKeyEnum;
 
-class Name
+class CzechName
 {
-    const TABLE = 'name_day_calendar';
-
     /**
      * @var int
      */
@@ -40,9 +40,10 @@ class Name
      */
     public static function loadMetadata(ORM\ClassMetadata $metadata)
     {
+        $countryEnum = new CountryEnum(SettingsKeyEnum::CZECH);
         $builder = new ClassMetadataBuilder($metadata);
-        $builder->setTable(self::TABLE)
-            ->setCustomRepositoryClass(NameRepository::class)
+        $builder->setTable($countryEnum->getTableName())
+            ->setCustomRepositoryClass(SlovakiaNameRepository::class)
             ->addId()
             ->addIndex(['day'], 'day');
 
@@ -64,7 +65,8 @@ class Name
      */
     public static function loadApiMetadata(ApiMetadataDriver $metadata)
     {
-        $metadata->setGroupPrefix(self::TABLE)
+        $countryEnum = new CountryEnum(SettingsKeyEnum::CZECH);
+        $metadata->setGroupPrefix($countryEnum->getTableName())
             ->addListProperties(
                 [
                     'id',
@@ -96,7 +98,7 @@ class Name
     /**
      * @param string $names
      *
-     * @return Name
+     * @return SlovakiaName
      */
     public function setNames($names)
     {
@@ -116,7 +118,7 @@ class Name
     /**
      * @param string $day
      *
-     * @return Name
+     * @return SlovakiaName
      */
     public function setDay($day)
     {

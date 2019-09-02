@@ -2,7 +2,7 @@
 
 /*
  * @copyright   2019 Mautic Contributors. All rights reserved
- * @author      Mautic
+ * @author      MTCExtendee.com
  *
  * @link        http://mautic.org
  *
@@ -13,7 +13,7 @@ namespace MauticPlugin\MauticNameDayBundle\Entity;
 
 use Mautic\CoreBundle\Entity\CommonRepository;
 
-class NameRepository extends CommonRepository
+class SlovakiaNameRepository extends CommonRepository
 {
 
 }

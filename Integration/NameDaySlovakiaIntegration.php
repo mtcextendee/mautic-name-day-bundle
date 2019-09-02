@@ -3,18 +3,30 @@
 namespace MauticPlugin\MauticNameDayBundle\Integration;
 
 use Mautic\PluginBundle\Integration\AbstractIntegration;
+use MauticPlugin\MauticNameDayBundle\Enum\CountryEnum;
+use MauticPlugin\MauticNameDayBundle\Enum\SettingsKeyEnum;
 
-class NameDayIntegration extends AbstractIntegration
+class NameDaySlovakiaIntegration extends AbstractIntegration
 {
+    /**
+     * @var CountryEnum
+     */
+    private $countryEnum;
+
+    public function __construct()
+    {
+        $this->countryEnum = new CountryEnum(SettingsKeyEnum::SLOVAKIA);
+        parent::__construct();
+    }
+
     public function getName()
     {
-        // should be the name of the integration
-        return 'NameDay';
+        return $this->countryEnum->getIntegrationName();
     }
 
     public function getDisplayName()
     {
-        return 'Slovakia Name Day';
+        return 'Slovakia Names Day';
     }
 
     public function getAuthenticationType()
@@ -30,7 +42,7 @@ class NameDayIntegration extends AbstractIntegration
      */
     public function getIcon()
     {
-        return 'plugins/MauticNameDayBundle/Assets/img/icon.png';
+        return sprintf("plugins/MauticNameDayBundle/Assets/img/%s.png", $this->countryEnum->getCountryName());
     }
 
     /**
