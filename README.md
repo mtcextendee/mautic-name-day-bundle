@@ -19,10 +19,10 @@ Slovakia and Czech name days as segment filter.
 
 ### How to create Happy Name day campaign
 
-1, Create segment is Name Day today
-2, Setup campaign with this segment
-3, Add campaign action send email. 
-4. Segment will rebuild with your contacts at midnight 
+1. Create segment is Name Day today
+2. Setup campaign with this segment
+3. Add campaign action send email. 
+4. Segment rebuild at midnight auto assign these related contact to campaign
 5. You can setup send email action with relative day and time delivery (for example at 7:00)
 
 <img src="https://user-images.githubusercontent.com/462477/64100869-d548f080-cd6c-11e9-9b3b-26734549d977.png" width="500">
