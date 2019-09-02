@@ -15,7 +15,7 @@ Slovakia and Czech name days as segment filter.
 
 ### Screenshots:
 
-![image](https://user-images.githubusercontent.com/462477/64100238-7c2c8d00-cd6b-11e9-82ed-9e3e5435f288.png)
+<img src="https://user-images.githubusercontent.com/462477/64100238-7c2c8d00-cd6b-11e9-82ed-9e3e5435f288.png" width="500">
 
 ### How to create Happy Name day campaign
 
@@ -25,7 +25,7 @@ Slovakia and Czech name days as segment filter.
 4. Segment will rebuild with your contacts at midnight 
 5. You can setup send email action with relative day and time delivery (for example at 7:00)
 
-![image](https://user-images.githubusercontent.com/462477/64100869-d548f080-cd6c-11e9-9b3b-26734549d977.png)
+<img src="https://user-images.githubusercontent.com/462477/64100869-d548f080-cd6c-11e9-9b3b-26734549d977.png" width="500">
 
 #### Support our projects
 
